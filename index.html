@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GENT'S CUT | Premium Barber Shop</title>
+    <meta name="description" content="Professional men's haircuts, beard grooming and styling. Book your next grooming appointment at THE GENT'S CUT.">
+    <meta name="keywords" content="Barber Shop, Men's Haircut, Fade Haircut, Beard Grooming, Men's Styling, Grooming Session">
+    <meta name="author" content="THE GENT'S CUT">
+
+    <meta property="og:title" content="THE GENT'S CUT | Premium Barber Shop">
+    <meta property="og:description" content="Professional men's haircuts, beard grooming and styling designed around your look.">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --bg-black: #0D0E10;
+            --bg-card: #14161A;
+            --bg-light: #1C1F26;
+            --accent-gold: #C5A059;
+            --accent-gold-hover: #D4AF37;
+            --text-white: #FFFFFF;
+            --text-muted: #9CA3AF;
+            --text-beige: #E5E1D8;
+            --border-color: #262932;
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-beige);
+            background-color: var(--bg-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Cinzel', serif;
+            color: var(--text-white);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: inherit;
+            outline: none;
+            border: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .text-center { text-align: center; }
+        .text-gold { color: var(--accent-gold); }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 1.8rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition);
+            gap: 0.5rem;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--bg-black);
+            border: 1px solid var(--accent-gold);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--accent-gold-hover);
+            border-color: var(--accent-gold-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-black);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #FFFFFF;
+            border: 1px solid #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1EBE5D;
+            border-color: #1EBE5D;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        /* SECTION TITLES */
+        .section-tag {
+            display: inline-block;
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(13, 14, 16, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 85px;
+        }
+
+        .logo {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--text-white);
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 1.75rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-beige);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-gold);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            font-size: 1.5rem;
+            color: var(--text-white);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            padding: 6rem 0;
+            background: linear-gradient(to right, rgba(13, 14, 16, 0.9), rgba(13, 14, 16, 0.6)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-highlights {
+            display: flex;
+            gap: 2rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-white);
+        }
+
+        .highlight-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-gold);
+            border-radius: 50%;
+        }
+
+        .hero-card {
+            background-color: rgba(20, 22, 26, 0.85);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* BOOKING STRIP */
+        .booking-strip {
+            background-color: var(--bg-card);
+            border-y: 1px solid var(--border-color);
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .strip-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        /* ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+        }
+
+        .about-list {
+            margin: 1.5rem 0 2rem 0;
+            display: grid;
+            gap: 0.85rem;
+        }
+
+        .about-list-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .check-icon {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        /* SERVICES SECTION */
+        .services-filter {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.25rem;
+            background-color: var(--bg-card);
+            color: var(--text-beige);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--accent-gold);
+            color: var(--bg-black);
+            border-color: var(--accent-gold);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .service-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .service-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+
+        .service-price {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* PRICING SECTION */
+        .pricing-list {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .pricing-item:last-child {
+            border-bottom: none;
+        }
+
+        /* GALLERY / OUR WORK */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            height: 260px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active { display: flex; }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        /* BARBER TEAM */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            border-color: var(--accent-gold);
+        }
+
+        .team-avatar {
+            width: 90px;
+            height: 90px;
+            background-color: var(--bg-light);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.25rem auto;
+            color: var(--accent-gold);
+        }
+
+        /* WHY CHOOSE US & EXPERIENCE */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+        }
+
+        .experience-flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2.5rem;
+        }
+
+        .exp-step {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+        }
+
+        .exp-step h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gold);
+        }
+
+        .exp-arrow {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+        }
+
+        /* BEARD & STYLES */
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .style-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .style-card img {
+            height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .style-card-body {
+            padding: 1.25rem;
+        }
+
+        /* STYLE MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active { display: flex; }
+
+        .modal-content {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            max-width: 500px;
+            width: 100%;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* APPOINTMENT FORM */
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 3rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-beige);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 0.85rem 1rem;
+            background-color: var(--bg-black);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-white);
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .form-alert {
+            display: none;
+            padding: 1rem;
+            background-color: rgba(37, 211, 102, 0.1);
+            border: 1px solid #25D366;
+            color: #25D366;
+            border-radius: var(--radius-sm);
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        /* TESTIMONIALS & FAQ */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+        }
+
+        .sample-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .faq-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            text-align: left;
+            background: none;
+            color: var(--text-white);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.25rem 1.5rem;
+            max-height: 200px;
+        }
+
+        /* FINAL CTA & FOOTER */
+        .final-cta {
+            background: linear-gradient(to right, rgba(13, 14, 16, 0.95), rgba(13, 14, 16, 0.85)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            padding: 5rem 0;
+            border-y: 1px solid var(--border-color);
+        }
+
+        footer {
+            background-color: var(--bg-black);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 0 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            color: var(--accent-gold);
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-gold);
+            color: var(--bg-black);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            font-weight: bold;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.75rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-menu {
+                position: fixed;
+                top: 85px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 85px);
+                background-color: var(--bg-black);
+                flex-direction: column;
+                padding: 2rem;
+                align-items: flex-start;
+                transition: var(--transition);
+                border-top: 1px solid var(--border-color);
+            }
+            .nav-menu.active { left: 0; }
+            .form-grid { grid-template-columns: 1fr; }
+            .form-group.full { grid-column: span 1; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .experience-flow { flex-direction: column; }
+            .exp-arrow { transform: rotate(90deg); }
+        }
+
+        @media (max-width: 480px) {
+            .section-title { font-size: 1.85rem; }
+            .hero-content h1 { font-size: 2.25rem; }
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons .btn { width: 100%; }
+            .form-container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                THE GENT'S <span>CUT</span>
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#work" class="nav-link">Our Work</a>
+                <a href="#barbers" class="nav-link">Barbers</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#booking" class="btn btn-gold" style="padding: 0.5rem 1.25rem;">Book Appointment</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="section-tag">Premium Grooming</span>
+                <h1>LOOK SHARP. FEEL CONFIDENT.</h1>
+                <p>Professional men's haircuts, beard grooming and styling designed around your look.</p>
+                <div class="hero-buttons">
+                    <a href="#booking" class="btn btn-gold">Book Appointment</a>
+                    <a href="https://wa.me/923472842874?text=Hello%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="btn btn-whatsapp">WhatsApp Us</a>
+                </div>
+                <div class="hero-highlights">
+                    <div class="highlight-item"><span class="highlight-dot"></span> Haircuts</div>
+                    <div class="highlight-item"><span class="highlight-dot"></span> Beard Grooming</div>
+                    <div class="highlight-item"><span class="highlight-dot"></span> Hair Styling</div>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Precision Grooming</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Dedicated to clean cuts, traditional barber craftsmanship, and modern styling techniques.</p>
+                <a href="#services" class="btn btn-outline" style="width: 100%;">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-strip">
+        <div class="container strip-flex">
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 0.25rem;">Ready for a Fresh Cut?</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Book your next grooming session today.</p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="tel:03218427463" class="btn btn-outline">Call 03218427463</a>
+                <a href="https://wa.me/923472842874?text=Hello%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="btn btn-whatsapp">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1000&q=80" alt="Barber cutting hair precisely">
+            </div>
+            <div>
+                <span class="section-tag">Craftsmanship & Style</span>
+                <h2 class="section-title">More Than Just a Haircut</h2>
+                <p style="color: var(--text-muted);">At THE GENT'S CUT, we view barbering as a precise craft. We focus on providing personalized attention, ensuring every fade, trim, and style is tailored to your unique face structure and personal aesthetic.</p>
+                <div class="about-list">
+                    <div class="about-list-item"><span class="check-icon">✓</span> Clean and precise cuts tailored to your profile</div>
+                    <div class="about-list-item"><span class="check-icon">✓</span> Personalized consultation before every session</div>
+                    <div class="about-list-item"><span class="check-icon">✓</span> Detailed beard shaping and hot towel refinements</div>
+                    <div class="about-list-item"><span class="check-icon">✓</span> Modern execution with traditional attention to detail</div>
+                    <div class="about-list-item"><span class="check-icon">✓</span> Comfortable, welcoming, and masculine shop environment</div>
+                </div>
+                <a href="#booking" class="btn btn-gold">Request Your Slot</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">What We Offer</span>
+                <h2 class="section-title">Grooming Services</h2>
+                <p class="section-subtitle">Tailored men's haircutting, razor fading, and beard maintenance.</p>
+            </div>
+
+            <div class="services-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="hair">Hair</button>
+                <button class="filter-btn" data-filter="beard">Beard</button>
+                <button class="filter-btn" data-filter="combo">Hair + Beard</button>
+                <button class="filter-btn" data-filter="kids">Kids</button>
+            </div>
+
+            <div class="services-grid" id="services-grid">
+                <div class="service-card" data-category="hair">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="Classic Haircut" class="service-img">
+                    <div class="service-body">
+                        <h3 class="service-title">Classic Haircut</h3>
+                        <p class="service-desc">Clean, precise haircut tailored to your preferred style and daily routine.</p>
+                        <div class="service-price">Ask for current price</div>
+                        <a href="#booking" class="btn btn-outline" style="width: 100%;">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="hair">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80" alt="Fade Haircut" class="service-img">
+                    <div class="service-body">
+                        <h3 class="service-title">Fade Haircut</h3>
+                        <p class="service-desc">Modern fade styles with detailed blending, seamless transitions, and crisp finishing.</p>
+                        <div class="service-price">Ask for current price</div>
+                        <a href="#booking" class="btn btn-outline" style="width: 100%;">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="beard">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=600&q=80" alt="Beard Trim" class="service-img">
+                    <div class="service-body">
+                        <h3 class="service-title">Beard Trim</h3>
+                        <p class="service-desc">Shape and refine your beard line, cheeks, and neckline for a clean appearance.</p>
+                        <div class="service-price">Ask for current price</div>
+                        <a href="#booking" class="btn btn-outline" style="width: 100%;">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="combo">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" alt="Hair & Beard" class="service-img">
+                    <div class="service-body">
+                        <h3 class="service-title">Hair & Beard</h3>
+                        <p class="service-desc">Complete grooming session combining a haircut and detailed beard styling.</p>
+                        <div class="service-price">Ask for current price</div>
+                        <a href="#booking" class="btn btn-outline" style="width: 100%;">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="kids">
+                    <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=600&q=80" alt="Kids Haircut" class="service-img">
+                    <div class="service-body">
+                        <h3 class="service-title">Kids Haircut</h3>
+                        <p class="service-desc">Comfortable, friendly, and stylish haircuts for younger clients.</p>
+                        <div class="service-price">Ask for current price</div>
+                        <a href="#booking" class="btn btn-outline" style="width: 100%;">Book Now</a>
+                    </div>
+                </div>
+                <div class="service-card" data-category="hair">
+                    <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?auto=format&fit=crop&w=600&q=80" alt="Hair Styling" class="service-img">
+                    <div class="service-body">
+                        <h3 class="service-title">Hair Styling</h3>
+                        <p class="service-desc">Professional styling using premium pomades and products for special occasions.</p>
+                        <div class="service-price">Ask for current price</div>
+                        <a href="#booking" class="btn btn-outline" style="width: 100%;">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Transparent Inquiries</span>
+                <h2 class="section-title">Pricing Guide</h2>
+                <p class="section-subtitle">Reach out directly to inquire about current rates and service packages.</p>
+            </div>
+            <div class="pricing-list">
+                <div class="pricing-item">
+                    <div>
+                        <strong style="font-size: 1.1rem; color: var(--text-white);">Classic Haircut</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Consultation, wash, cut & style</p>
+                    </div>
+                    <span style="color: var(--accent-gold); font-weight: 600;">Contact for current price</span>
+                </div>
+                <div class="pricing-item">
+                    <div>
+                        <strong style="font-size: 1.1rem; color: var(--text-white);">Beard Trim & Sculpt</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Razor line-up & hot towel trim</p>
+                    </div>
+                    <span style="color: var(--accent-gold); font-weight: 600;">Contact for current price</span>
+                </div>
+                <div class="pricing-item">
+                    <div>
+                        <strong style="font-size: 1.1rem; color: var(--text-white);">Hair + Beard Combination</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Complete head and beard haircut package</p>
+                    </div>
+                    <span style="color: var(--accent-gold); font-weight: 600;">Contact for current price</span>
+                </div>
+                <div class="pricing-item">
+                    <div>
+                        <strong style="font-size: 1.1rem; color: var(--text-white);">Kids Cut</strong>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">Ages 12 & under classic style</p>
+                    </div>
+                    <span style="color: var(--accent-gold); font-weight: 600;">Contact for current price</span>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Call for Current Prices & Appointment Slots</p>
+                <a href="tel:03218427463" class="btn btn-gold">Call 03218427463</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="section-padding" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Our Work</h2>
+                <p class="section-subtitle">A showcase of clean fades, sharp lines, and refined haircuts.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=600&q=80" alt="Fade haircut work">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80" alt="Barber styling hair">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=600&q=80" alt="Classic cut detail">
+                </div>
+                <div class="gallery-item" onclick="openLightbox('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1200&q=80')">
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80" alt="Barber shop chair and interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Enlarged gallery work">
+    </div>
+
+    <section id="barbers" class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Professional Staff</span>
+                <h2 class="section-title">Our Barbers</h2>
+                <p class="section-subtitle">Dedicated groomers focused on quality and precision.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">✂️</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Senior Barber</h3>
+                    <p style="color: var(--accent-gold); font-size: 0.85rem;">Professional Barber</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">💈</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Style Specialist</h3>
+                    <p style="color: var(--accent-gold); font-size: 0.85rem;">Men's Grooming Specialist</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">🪒</div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Barber</h3>
+                    <p style="color: var(--accent-gold); font-size: 0.85rem;">Hair & Beard Specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">The Standard</span>
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">We maintain high standards across every single haircut.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.5rem;">Precision Haircuts</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Clean lines, smooth blends, and balanced proportions tailored to your head shape.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.5rem;">Personalized Style</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">We listen to your preferences and recommend styles that fit your daily routine.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.5rem;">Beard Grooming</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Detailed necklines, cheek line-ups, and shape maintenance for all beard lengths.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.5rem;">Clean Environment</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Sanitized tools, fresh capes, and a hygienic station for every client visit.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.5rem;">Modern Techniques</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Using contemporary cutting and texturizing methods alongside classic razor skills.</p>
+                </div>
+                <div class="feature-card">
+                    <h3 style="color: var(--accent-gold); font-size: 1.1rem; margin-bottom: 0.5rem;">Comfortable Experience</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Relax in a masculine, comfortable atmosphere built for modern gentlemen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Process</span>
+                <h2 class="section-title">The Barber Experience</h2>
+                <p class="section-subtitle">Four steps to ensuring you leave looking your absolute best.</p>
+            </div>
+            <div class="experience-flow">
+                <div class="exp-step">
+                    <h4>1. Consult</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Understand client preferences and style goals.</p>
+                </div>
+                <div class="exp-arrow">→</div>
+                <div class="exp-step">
+                    <h4>2. Cut</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Create a clean, structured, and precise cut.</p>
+                </div>
+                <div class="exp-arrow">→</div>
+                <div class="exp-step">
+                    <h4>3. Style</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Apply appropriate grooming product and shape.</p>
+                </div>
+                <div class="exp-arrow">→</div>
+                <div class="exp-step">
+                    <h4>4. Finish</h4>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Razor line-ups and final quality inspection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--bg-card);">
+        <div class="container about-grid">
+            <div>
+                <span class="section-tag">Specialized Care</span>
+                <h2 class="section-title">Define Your Beard. Define Your Style.</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">A well-maintained beard enhances facial structure and completes your look. Our beard services cover everything from subtle trims to total re-shaping.</p>
+                <div class="about-list">
+                    <div class="about-list-item"><span class="check-icon">✓</span> <strong>Beard Trim:</strong> Maintain length and density</div>
+                    <div class="about-list-item"><span class="check-icon">✓</span> <strong>Beard Shape:</strong> Define jawline and balance proportions</div>
+                    <div class="about-list-item"><span class="check-icon">✓</span> <strong>Beard Line-Up:</strong> Crisp cheek and neck razor edging</div>
+                    <div class="about-list-item"><span class="check-icon">✓</span> <strong>Mustache Grooming:</strong> Precision lip clearance and shaping</div>
+                </div>
+                <a href="#booking" class="btn btn-gold">Book Beard Grooming</a>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1000&q=80" alt="Beard grooming service">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Lookbook</span>
+                <h2 class="section-title">Popular Haircut Styles</h2>
+                <p class="section-subtitle">Select a style to ask your barber during your appointment.</p>
+            </div>
+            <div class="styles-grid">
+                <div class="style-card">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=400&q=80" alt="Low Fade">
+                    <div class="style-card-body">
+                        <h4 style="margin-bottom: 0.5rem;">Low Fade</h4>
+                        <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; width: 100%;" onclick="openStyleModal('Low Fade', 'A subtle fade that begins right above the ears and neckline for a clean finish.')">Ask About This</button>
+                    </div>
+                </div>
+                <div class="style-card">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=400&q=80" alt="Mid Fade">
+                    <div class="style-card-body">
+                        <h4 style="margin-bottom: 0.5rem;">Mid Fade</h4>
+                        <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; width: 100%;" onclick="openStyleModal('Mid Fade', 'A versatile fade starting midway up the head, creating a balanced contrast.')">Ask About This</button>
+                    </div>
+                </div>
+                <div class="style-card">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=400&q=80" alt="High Fade">
+                    <div class="style-card-body">
+                        <h4 style="margin-bottom: 0.5rem;">High Fade</h4>
+                        <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; width: 100%;" onclick="openStyleModal('High Fade', 'A bold, high-contrast fade starting near the crown for a sharp modern look.')">Ask About This</button>
+                    </div>
+                </div>
+                <div class="style-card">
+                    <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?auto=format&fit=crop&w=400&q=80" alt="Textured Crop">
+                    <div class="style-card-body">
+                        <h4 style="margin-bottom: 0.5rem;">Textured Crop</h4>
+                        <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; width: 100%;" onclick="openStyleModal('Textured Crop', 'Short textured top with blunted or faded fringe for effortless daily styling.')">Ask About This</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="style-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeStyleModal()">&times;</button>
+            <h3 id="modal-style-title" style="margin-bottom: 0.5rem; color: var(--accent-gold);">Style Name</h3>
+            <p id="modal-style-desc" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Style description goes here.</p>
+            <a href="#booking" class="btn btn-gold" onclick="closeStyleModal()" style="width: 100%;">Book This Style</a>
+        </div>
+    </div>
+
+    <section class="section-padding" style="background-color: var(--bg-card); border-y: 1px solid var(--border-color);">
+        <div class="container text-center">
+            <span class="section-tag">Instant Booking</span>
+            <h2 class="section-title">Prefer WhatsApp?</h2>
+            <p class="section-subtitle">Send us your preferred service and appointment details directly on WhatsApp for quick scheduling.</p>
+            <a href="https://wa.me/923472842874?text=Hello,%20I%20would%20like%20to%20book%20a%20barber%20appointment.%0AName:%20%0AService:%20%0APreferred%20Date:%20%0APreferred%20Time:%20" target="_blank" class="btn btn-whatsapp" style="padding: 1rem 2rem; font-size: 1rem;">Book on WhatsApp</a>
+        </div>
+    </section>
+
+    <section id="booking" class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Reservation</span>
+                <h2 class="section-title">Request Appointment</h2>
+                <p class="section-subtitle">Fill out your details to request an appointment time.</p>
+            </div>
+            <div class="form-container">
+                <form id="appointment-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullname">Full Name *</label>
+                            <input type="text" id="fullname" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" required placeholder="03218427463">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Select Service *</label>
+                            <select id="service" required>
+                                <option value="">-- Choose Service --</option>
+                                <option value="Classic Haircut">Classic Haircut</option>
+                                <option value="Fade Haircut">Fade Haircut</option>
+                                <option value="Beard Trim">Beard Trim</option>
+                                <option value="Hair + Beard">Hair + Beard Combo</option>
+                                <option value="Kids Haircut">Kids Haircut</option>
+                                <option value="Hair Styling">Hair Styling</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date *</label>
+                            <input type="date" id="date" required>
+                        </div>
+                        <div class="form-group full">
+                            <label for="time">Preferred Time *</label>
+                            <input type="time" id="time" required>
+                        </div>
+                        <div class="form-group full">
+                            <label for="message">Message (Optional)</label>
+                            <textarea id="message" rows="3" placeholder="Any specific style requirements..."></textarea>
+                        </div>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <button type="submit" class="btn btn-gold" style="width: 100%;">Request Appointment</button>
+                    </div>
+                </form>
+                <div class="form-alert" id="form-alert">
+                    Thank you! Your appointment request has been logged.
+                    <div style="margin-top: 1rem;">
+                        <a id="wa-form-btn" href="https://wa.me/923472842874" target="_blank" class="btn btn-whatsapp" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Confirm via WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Feedback</span>
+                <h2 class="section-title">Client Experience</h2>
+                <p class="section-subtitle">Examples of client feedback on our barbering services.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <span class="sample-label">Sample Client Feedback</span>
+                    <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1rem;">"Consistently sharp fades and good attention to detail on beard line-ups. Great shop atmosphere."</p>
+                    <strong style="color: var(--text-white);">Regular Client</strong>
+                </div>
+                <div class="testimonial-card">
+                    <span class="sample-label">Sample Client Feedback</span>
+                    <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1rem;">"Takes the time during consultation to understand what style works best. Very satisfied with the service."</p>
+                    <strong>Grooming Client</strong>
+                </div>
+                <div class="testimonial-card">
+                    <span class="sample-label">Sample Client Feedback</span>
+                    <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1rem;">"Clean shop, precise haircuts, and efficient appointment booking."</p>
+                    <strong>Haircut Client</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Help Center</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Common questions regarding appointments, services, and bookings.</p>
+            </div>
+            <div class="faq-wrapper">
+                <div class="faq-item">
+                    <button class="faq-question">How can I book an appointment? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>You can book using our online request form, by calling us at 03218427463, or directly messaging us on WhatsApp.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do I need to book in advance? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>We recommend booking in advance to secure your preferred time slot, though walk-in availability depends on daily schedules.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What haircut styles do you offer? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>We offer classic cuts, skin fades, low/mid/high fades, textured crops, tapers, pompadours, and custom styled looks.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer beard grooming? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Yes, we provide beard trimming, cheek and neck razor line-ups, beard shaping, and full grooming packages.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you provide kids haircuts? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer tailored haircuts for younger clients in a comfortable setting.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I ask about current prices? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Absolutely. You can call us at 03218427463 or message on WhatsApp to receive the current price list for all services.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I book through WhatsApp? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Yes, clicking any WhatsApp button on this site will open a direct chat to discuss and confirm your appointment time.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How can I contact the barber shop? <span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Contact us by calling 03218427463 or reach out on WhatsApp at 923472842874 for immediate queries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-padding" style="background-color: var(--bg-card);">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Reach Out</span>
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Direct contact information for appointments and location details.</p>
+            </div>
+            <div style="max-width: 600px; margin: 0 auto; text-align: center; background-color: var(--bg-black); padding: 2.5rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                <h3 style="margin-bottom: 1rem; color: var(--accent-gold);">THE GENT'S CUT</h3>
+                <p style="margin-bottom: 0.75rem;"><strong>Phone:</strong> <a href="tel:03218427463" style="color: var(--text-white);">03218427463</a></p>
+                <p style="margin-bottom: 0.75rem;"><strong>WhatsApp:</strong> <a href="https://wa.me/923472842874" target="_blank" style="color: #25D366;">923472842874</a></p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Contact us for current location details and shop opening hours.</p>
+                <a href="https://wa.me/923472842874?text=Hello,%20I%20have%20a%20question%20about%20your%20location." target="_blank" class="btn btn-whatsapp">Chat on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container text-center">
+            <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">YOUR NEXT LOOK STARTS HERE.</h2>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;">Fresh cut. Clean beard. Confident style.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#booking" class="btn btn-gold">Book Appointment</a>
+                <a href="tel:03218427463" class="btn btn-outline">Call Now</a>
+                <a href="https://wa.me/923472842874" target="_blank" class="btn btn-whatsapp">WhatsApp Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#home" class="logo" style="margin-bottom: 1rem; display: inline-block;">
+                        THE GENT'S <span>CUT</span>
+                    </a>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Premium men's haircuts, beard grooming, and professional styling.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#work">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Classic Haircut</a></li>
+                        <li><a href="#services">Fade Haircut</a></li>
+                        <li><a href="#services">Beard Trim</a></li>
+                        <li><a href="#services">Hair & Beard</a></li>
+                        <li><a href="#services">Kids Cut</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem;">Phone: 03218427463</p>
+                    <a href="https://wa.me/923472842874" target="_blank" class="btn btn-whatsapp" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; margin-top: 0.5rem;">Chat on WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 THE GENT'S CUT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">↑</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('nav-menu');
+
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu on clicking nav link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Services Filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    serviceCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    const isActive = item.classList.contains('active');
+
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            // Form Handling
+            const form = document.getElementById('appointment-form');
+            const formAlert = document.getElementById('form-alert');
+            const waFormBtn = document.getElementById('wa-form-btn');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('fullname').value;
+                const phone = document.getElementById('phone').value;
+                const service = document.getElementById('service').value;
+                const date = document.getElementById('date').value;
+                const time = document.getElementById('time').value;
+
+                if (!name || !phone || !service || !date || !time) {
+                    alert('Please fill out all required fields.');
+                    return;
+                }
+
+                form.style.display = 'none';
+                formAlert.style.display = 'block';
+
+                const msg = `Hello, I would like to book a barber appointment.%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0APreferred Date: ${encodeURIComponent(date)}%0APreferred Time: ${encodeURIComponent(time)}`;
+                waFormBtn.href = `https://wa.me/923472842874?text=${msg}`;
+            });
+
+            // Scroll Events: Back to top & Active nav
+            const backToTopBtn = document.getElementById('backToTop');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('active');
+                } else {
+                    backToTopBtn.classList.remove('active');
+                }
+
+                // Scroll spy
+                const sections = document.querySelectorAll('section[id]');
+                const scrollY = window.pageYOffset;
+
+                sections.forEach(current => {
+                    const sectionHeight = current.offsetHeight;
+                    const sectionTop = current.offsetTop - 100;
+                    const sectionId = current.getAttribute('id');
+                    const navItem = document.querySelector(`.nav-menu a[href*=${sectionId}]`);
+
+                    if (navItem) {
+                        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                            navItem.classList.add('active');
+                        } else {
+                            navItem.classList.remove('active');
+                        }
+                    }
+                });
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Lightbox Functions
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        // Style Modal Functions
+        function openStyleModal(title, desc) {
+            document.getElementById('modal-style-title').innerText = title;
+            document.getElementById('modal-style-desc').innerText = desc;
+            document.getElementById('style-modal').classList.add('active');
+        }
+
+        function closeStyleModal() {
+            document.getElementById('style-modal').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
